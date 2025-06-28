@@ -1,0 +1,81 @@
+{
+    "name": "yasinsvr/laravel-websockets",
+    "description": "An easy to launch a Pusher-compatible WebSockets server for Laravel.",
+    "keywords": [
+        "yasinsvr",
+        "laravel-websockets",
+        "laravel",
+        "php"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/yasinsvr/laravel-websockets",
+    "author": [
+        {
+            "name": "yasin Zolfaghari",
+            "email": "yasin.zolfaghari.dev@gmail.com",
+            "homepage": "https://github.com/yasinsvr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^8.2",
+        "cboden/ratchet": "^0.4.4",
+        "clue/block-react": "^1.5",
+        "clue/reactphp-sqlite": "^1.0",
+        "clue/redis-react": "^2.6",
+        "doctrine/dbal": "^2.9",
+        "evenement/evenement": "^2.0|^3.0",
+        "facade/ignition-contracts": "^1.0",
+        "guzzlehttp/psr7": "^2.7.1",
+        "illuminate/broadcasting": "^10.0|^11.0|^12.0",
+        "illuminate/console": "^10.0|^11.0|^12.0",
+        "illuminate/http": "^10.0|^11.0|^12.0",
+        "illuminate/queue": "^10.0|^11.0|^12.0",
+        "illuminate/routing": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "pusher/pusher-php-server": "^6.0|^7.0",
+        "react/mysql": "^0.5",
+        "react/promise": "^2.8",
+        "symfony/http-kernel": "^5.0|^6.0|^7.3.0",
+        "symfony/psr-http-message-bridge": "^1.1|^2.0|^7.3.0"
+    },
+    "require-dev": {
+        "clue/buzz-react": "^2.9",
+        "laravel/legacy-factories": "^1.1",
+        "orchestra/testbench-browser-kit": "^7.0",
+        "phpunit/phpunit": "^9.0",
+        "ratchet/pawl": "^0.3.5"
+    },
+    "suggest": {
+        "ext-pcntl": "Running the server needs pcntl to listen to command signals and soft-shutdown.",
+        "doctrine/dbal": "Required to run database migrations (^2.9|^3.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "YasinSVR\\LaravelWebSockets\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "YasinSVR\\LaravelWebSockets\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YasinSVR\\LaravelWebSockets\\WebSocketsServiceProvider"
+            ],
+            "aliases": {
+                "WebSocketRouter": "YasinSVR\\LaravelWebSockets\\Facades\\WebSocketRouter"
+            }
+        }
+    }
+}
